@@ -21,8 +21,6 @@ nodes = np.linspace(start, end, count)
 
 
 def create_matrix(p, q, f, lft_edge, rgt_edge, nodes, accuracy=1):
-    if len(np.unique(np.diff(nodes).round(10))) != 1:
-        raise Exception("make_system: grid must be uniform")
     h = nodes[1] - nodes[0]
     left_matrix = np.zeros(3 * len(nodes) - 2)
     right_matrix = np.zeros(len(nodes))
